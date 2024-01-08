@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Experiência Puro Ser</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Nossos Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <id="inicio">
+        <l1></l1>
+        <h1>Bem-Vindo à Experiência Puro Ser</h1>
+        <p>Explore a jornada para o autoconhecimento e a paz interior.</p>
+        <id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos apaixonados por ajudar as pessoas a encontrar equilíbrio, serenidade e bem-estar em suas vidas. Nossa abordagem única combina meditação, ioga e práticas holísticas para promover uma experiência pura do ser.</p>
+    
+
+    <id="servicos">
+        <h2>Nossos Serviços</h2>
+        <ul>
+
+            <a href='file:///C:/Users/Adryan%20Gianno/Documents/Projeto%20Puro%20Ser/html-css/Exercício/Ex.001/PuroSer3.html'><button>A experiência</button></a>
+            <button onclick="mostrarMensagem('Meditação Guiada')">Meditação Guiada</button>
+            <button onclick="mostrarMensagem('Aulas de Ioga')">Aulas de Ioga</button>
+            <button onclick="mostrarMensagem('Workshops de Mindfulness')">Workshops de Mindfulness</button>
+            <button onclick="mostrarMensagem('Terapias Holísticas')">Terapias Holísticas</button>
+        
+        </ul>
+    
+
+    <id="contato">
+        <h2>Contate-nos</h2>
+        <p>Estamos à disposição para responder a todas as suas perguntas e agendar sessões individuais ou em grupo. Entre em contato conosco.</p>
+        <address>
+            <p>Seja redirecionado à página da 
+                <a href="https://instagram.com/experienciapuroser?igshid=MzRlODBiNWFlZA==">Experiência Puro Ser</a></p>
+            Email: <a href="mailto:contato@experienciapuroser.com">contato@experienciapuroser.com</a><br>
+            Telefone: (11) 1234-5678<br>
+            Endereço: Rua da Paz, 123 - Cidade Serena, SP
+        </address>
+    
+
+    <footer>
+        <p>&copy; 2023 Experiência Puro Ser. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        // Função para rolar suavemente para as seções quando um link é clicado
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 50, // Ajuste para a altura do cabeçalho
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Event listener para os links de navegação
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+
+            // Event listener para a validação do formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function (e) {
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+
+                if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                    alert('Por favor, preencha todos os campos do formulário.');
+                    e.preventDefault();
+                }
+            });
+        });
+         // Função para mostrar uma mensagem quando um serviço é clicado
+         function mostrarMensagem(servico) {
+            alert("Você clicou em: " + servico);
+        }
+        function toggleMenu() {
+            var menuNavegacao = document.getElementById('menu-navegacao');
+            menuNavegacao.style.display = (menuNavegacao.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Seu código HTML existente aqui -->
+
+    <div id="menu-hamburguer" onclick="toggleMenu()">
+        <div class="barra-menu"></div>
+        <div class="barra-menu"></div>
+        <div class="barra-menu"></div>
+    </div>
+
+    <div id="menu-navegacao">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Nossos Serviços</a>
+        <a href="#contato">Contato</a>
+    </div>
+
+    <section id="contato">
+        <h2>Contate-nos</h2>
+        <form id="contactForm" action="seu-script-de-processamento.php" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+
+</body>
+</html>
